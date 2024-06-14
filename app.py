@@ -19,6 +19,19 @@ def str_to_bool(str_input):
         return False
     return str_input.lower() == "true"
 
+def add_custom_css():
+    st.markdown(
+        """
+        <style>
+        body {
+            direction: rtl;
+            text-align: right;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
 
 # Load environment variables
 azure_openai_endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT")
@@ -258,6 +271,7 @@ def login():
 
 
 def main():
+    add_custom_css()
     if (
         authentication_required
         and "credentials" in st.secrets
