@@ -271,7 +271,7 @@ def login():
 
 
 def main():
-    add_custom_css()
+    #add_custom_css()
     if (
         authentication_required
         and "credentials" in st.secrets
